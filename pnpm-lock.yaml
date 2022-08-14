@@ -6,10 +6,19 @@ specifiers:
   '@commitlint/config-conventional': ^16.2.4
   '@fullstacksjs/eslint-config': ^8.4.3
   '@storybook/addon-actions': ^6.5.0-beta.8
+  '@storybook/addon-backgrounds': ^6.5.10
+  '@storybook/addon-docs': ^6.5.10
   '@storybook/addon-essentials': ^6.5.0-beta.8
-  '@storybook/addon-interactions': ^6.5.0-beta.8
+  '@storybook/addon-interactions': ^6.5.10
   '@storybook/addon-links': ^6.5.0-beta.8
+  '@storybook/addon-measure': ^6.5.10
+  '@storybook/addon-outline': ^6.5.10
+  '@storybook/addons': ^6.5.10
   '@storybook/builder-vite': ^0.1.33
+  '@storybook/channel-postmessage': ^6.5.10
+  '@storybook/channel-websocket': ^6.5.10
+  '@storybook/client-api': ^6.5.10
+  '@storybook/preview-web': ^6.5.10
   '@storybook/react': ^6.5.0-beta.8
   '@storybook/testing-library': ^0.0.11
   '@trivago/prettier-plugin-sort-imports': ^3.2.0
@@ -66,10 +75,19 @@ devDependencies:
   '@commitlint/config-conventional': 16.2.4
   '@fullstacksjs/eslint-config': 8.5.1_mgwvv3nugvnp77tznmefxdzmqu
   '@storybook/addon-actions': 6.5.10_biqbaboplfbrettd7655fr4n2y
+  '@storybook/addon-backgrounds': 6.5.10_biqbaboplfbrettd7655fr4n2y
+  '@storybook/addon-docs': 6.5.10_j3xkkz64w3nktxhc4ef53ifdsa
   '@storybook/addon-essentials': 6.5.10_j3xkkz64w3nktxhc4ef53ifdsa
   '@storybook/addon-interactions': 6.5.10_gnl5i5cb3h2lnkptqhyi4kye4e
   '@storybook/addon-links': 6.5.10_biqbaboplfbrettd7655fr4n2y
+  '@storybook/addon-measure': 6.5.10_biqbaboplfbrettd7655fr4n2y
+  '@storybook/addon-outline': 6.5.10_biqbaboplfbrettd7655fr4n2y
+  '@storybook/addons': 6.5.10_biqbaboplfbrettd7655fr4n2y
   '@storybook/builder-vite': 0.1.41_dkfmlrxtotezaw7heap5mxnptu
+  '@storybook/channel-postmessage': 6.5.10
+  '@storybook/channel-websocket': 6.5.10
+  '@storybook/client-api': 6.5.10_biqbaboplfbrettd7655fr4n2y
+  '@storybook/preview-web': 6.5.10_biqbaboplfbrettd7655fr4n2y
   '@storybook/react': 6.5.10_gk6j6m4hmrjhpv6qjintlhniyi
   '@storybook/testing-library': 0.0.11_biqbaboplfbrettd7655fr4n2y
   '@trivago/prettier-plugin-sort-imports': 3.3.0_prettier@2.7.1

@@ -1,24 +1,63 @@
 {
+	"files.autoSave": "off",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": false,
+		"source.fixAll.eslint": true, // this allows ESLint to auto fix on save
+		"source.organizeImports": false
+	},
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"files.simpleDialog.enable": true,
+	"editor.wordWrap": "wordWrapColumn",
+	"editor.wordWrapColumn": 110,
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": false,
+	"editor.autoClosingBrackets": "always",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"eslint.options": {
+		"extensions": [".js", ".jsx", "ts", "tsx", ".md", ".mdx"]
+	},
 	"editor.rulers": [120],
+	"eslint.packageManager": "pnpm",
+	"eslint.format.enable": true,
+	"eslint.validate": [
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact",
+		"vue",
+		"html",
+		"markdown",
+		"mdx",
+		"json",
+		"jsonc",
+		"json5"
+	],
+	"emmet.triggerExpansionOnTab": true,
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact",
+		"typescript": "typescriptreact"
+	},
+	"emmet.syntaxProfiles": {
+		"javascript": ["jsx", "html"]
+	},
+	"emmet.showExpandedAbbreviation": "always",
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.expand": false,
 	"explorer.fileNesting.patterns": {
-	  "package.json": "tsconfig.json, vite.config.ts, acss.ts, .postcssrc.js, .stackblitzrc, unocss*, pnpm*",
-	  "README.md": ".git*, .eslint*, .prettier*, .stylelint*, commitlint*, .editorconfig",
+		"package.json": "tsconfig.json, vite.config.ts, acss.ts, .postcssrc.js, .stackblitzrc, unocss*, pnpm*",
+		"README.md": ".git*, .eslint*, .prettier*, .stylelint*, commitlint*, .editorconfig"
 	},
 	"[javascript]": {
-	  "editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[typescript]": {
-	  "editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[json]": {
-	  "editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[jsonc]": {
-	  "editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"eslint.packageManager": "pnpm",
-	"eslint.format.enable": true,
-	"eslint.validate": ["javascript", "typescript", "react"],
- }
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}
