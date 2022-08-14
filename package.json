@@ -39,10 +39,9 @@
 	"packageManager": "pnpm@7",
 	"main": "./src/main.tsx",
 	"scripts": {
-		"reset:git": "rimraf .git && git init && git add . && git commit -m \"init commit\"",
 		"reset:vite": "rimraf ./.vite-cache ./dist",
-		"reset:file": "node ./clean.js",
-		"reset": "pnpm run reset:vite && pnpm run reset:file && pnpm run reset:git",
+		"reset:file": "node ./script/clean.js",
+		"reset": "pnpm run reset:vite && pnpm run reset:file",
 		"dev": "pnpm run reset:vite && cross-env DEBUG=vite:plugin:mkcert HTTPS=true vite",
 		"dev:http": "pnpm run reset:vite && vite",
 		"build": "pnpm run reset:vite && tsc && vite build",
