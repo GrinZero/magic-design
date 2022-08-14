@@ -1,0 +1,27 @@
+{
+	"editor.rulers": [120],
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.patterns": {
+	  "package.json": "tsconfig.json, vite.config.ts, acss.ts, .postcssrc.js, .stackblitzrc, unocss*, pnpm*",
+	  "README.md": ".git*, .eslint*, .prettier*, .stylelint*, commitlint*, .editorconfig",
+	},
+	"[javascript]": {
+	  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[typescript]": {
+	  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[vue]": {
+	  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"[json]": {
+	  "editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+	  "editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"eslint.packageManager": "pnpm",
+	"eslint.format.enable": true,
+	"eslint.validate": ["javascript", "typescript", "react"],
+ }
