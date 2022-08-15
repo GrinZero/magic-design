@@ -45,9 +45,16 @@
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.expand": false,
 	"explorer.fileNesting.patterns": {
-		"package.json": "tsconfig.json, vite.config.ts, acss.ts, .postcssrc.js, .stackblitzrc, unocss*, pnpm*",
+		"package.json": "tsconfig.json, *.config.js, *.config.ts, .stackblitzrc, pnpm*",
 		"README.md": ".git*, .eslint*, .prettier*, .stylelint*, commitlint*, .editorconfig"
 	},
+	"tailwindCSS.includeLanguages": {
+		"javascript": "javascriptreact",
+		"typescript": "typescriptreact",
+		"css": "css",
+		"mdx": "mdx"
+	},
+	"tailwindCSS.experimental.configFile": "tailwind.config.js",
 	"[javascript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},

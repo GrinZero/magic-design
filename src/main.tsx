@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter } from 'react-router-dom';
 
-import 'uno.css';
+import 'tailwindcss/tailwind.css';
 
 import ErrorFallback from '~sections/ErrorFallback';
-import '~styles/styles.rtl.scss';
-import '~styles/styles.scss';
 
 import App from './App';
 

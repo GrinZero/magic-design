@@ -7,7 +7,6 @@ import svgr from 'vite-plugin-svgr';
 
 import { resolve } from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
-import Unocss from 'unocss/vite';
 
 import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
@@ -34,10 +33,6 @@ export default defineConfig((mode) => {
 			mkcert({
 				source: 'coding',
 			}),
-
-			// https://github.com/antfu/unocss
-			// see unocss.config.ts for config
-			Unocss(),
 
 			viteImagemin({
 				disable: mode === 'development',
