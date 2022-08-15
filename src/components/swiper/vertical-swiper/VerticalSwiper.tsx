@@ -1,4 +1,5 @@
 import React from 'react';
+
 import type { SwiperProps } from '../types';
 
 // interface VerticalSwiperProps {
@@ -7,7 +8,7 @@ import type { SwiperProps } from '../types';
 // }
 
 const VerticalSwiper: React.FC<SwiperProps> = ({ duration }) => {
-	return <div className="ml-20">1</div>;
+	return <div className="ml-20">12</div>;
 };
 
 export default VerticalSwiper;

@@ -31,5 +31,6 @@ module.exports = {
 				usePrettierrc: true,
 			},
 		],
+		'filenames/match-regex': 'off',
 	},
 };
