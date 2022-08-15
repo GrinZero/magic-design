@@ -6,3 +6,5 @@ build
 dist-ssr
 *.local
 *.md
+.*.js
+.*.config.js
