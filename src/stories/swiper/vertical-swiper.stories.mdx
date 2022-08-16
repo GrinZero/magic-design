@@ -1,6 +1,6 @@
 import { Meta ,Canvas} from '@storybook/addon-docs';
 
-import VerticalSwiper from "../vertical-swiper/VerticalSwiper"
+import {SwiperItem, VerticalSwiper } from "../../components";
 
 
 <Meta title="Swiper/VerticalSwiper" component={VerticalSwiper} />
@@ -8,5 +8,7 @@ import VerticalSwiper from "../vertical-swiper/VerticalSwiper"
 # Swiper/VerticalSwiper
 
 <Canvas>
-	<VerticalSwiper/>
+	<VerticalSwiper>
+		<SwiperItem>TEST</SwiperItem>
+	</VerticalSwiper>
 </Canvas>

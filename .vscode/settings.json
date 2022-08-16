@@ -11,8 +11,6 @@
 	"files.eol": "\n",
 	"files.insertFinalNewline": true,
 	"files.simpleDialog.enable": true,
-	"editor.wordWrap": "wordWrapColumn",
-	"editor.wordWrapColumn": 110,
 	"editor.formatOnSave": true,
 	"editor.formatOnPaste": false,
 	"editor.autoClosingBrackets": "always",
@@ -69,5 +67,52 @@
 	},
 	"[jsonc]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	},
+	"[mdx]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"auto-close-tag.activationOnLanguage": [
+		"xml",
+		"php",
+		"blade",
+		"ejs",
+		"jinja",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"plaintext",
+		"markdown",
+		"vue",
+		"liquid",
+		"erb",
+		"lang-cfml",
+		"cfml",
+		"HTML (EEx)",
+		"HTML (Eex)",
+		"plist",
+		"mdx"
+	],
+	"auto-rename-tag.activationOnLanguage": [
+		"xml",
+		"php",
+		"blade",
+		"ejs",
+		"jinja",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"plaintext",
+		"markdown",
+		"vue",
+		"liquid",
+		"erb",
+		"lang-cfml",
+		"cfml",
+		"HTML (EEx)",
+		"HTML (Eex)",
+		"plist",
+		"mdx"
+	]
 }

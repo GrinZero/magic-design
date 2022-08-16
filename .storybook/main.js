@@ -9,4 +9,10 @@ module.exports = {
 	features: {
 		storyStoreV7: true,
 	},
+	webpackFinal: async (config) => {
+		config.resolve.alias['~'] = path.resolve(__dirname, '../src');
+		config.resolve.alias['~components'] = path.resolve(__dirname, '../src/components');
+		console.info(config);
+		return config;
+	},
 };
