@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
+import { CornerSwiper, SwiperItem } from '@/components';
+
 import firstPng from '../../assets/images/stories/swiperBanner1.png';
 import secondPng from '../../assets/images/stories/swiperBanner2.png';
 import thirdPng from '../../assets/images/stories/swiperBanner3.png';
-import { CornerSwiper, SwiperItem } from '../../components';
 
 const CornerSwiperIndex = () => {
 	const [current, setCurrent] = useState(0);
