@@ -20,7 +20,9 @@
 		"^(^antd|^rsuite|^@emotion|^emotion|theme-ui|^semantic-ui|^@rebass|^@chakra-ui|bootstrap|tailwind|bulma|mui|^@blueprintjs|reactstrap|^@mantine)",
 		"<THIRD_PARTY_MODULES>",
 		"^@(.*)$",
-		"^~(.*)$",
+		"^@/(.*)$",
+		"^#(.*)$",
+		"^#/(.*)$",
 		"^[./]"
 	],
 	"importOrderGroupNamespaceSpecifiers": true,

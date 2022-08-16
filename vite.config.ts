@@ -71,6 +71,10 @@ export default defineConfig((mode) => {
 			sourcemap: !!shouldAnalyze,
 		},
 		css: {
+			modules: {
+				hashPrefix: 'mg-',
+				localsConvention: 'dashes',
+			},
 			devSourcemap: true,
 			preprocessorOptions: {
 				less: {
@@ -88,20 +92,7 @@ export default defineConfig((mode) => {
 		 */
 		resolve: {
 			alias: {
-				'~src': resolve(__dirname, 'src'),
-				'~components': resolve(__dirname, 'src', 'components'),
-				'~hooks': resolve(__dirname, 'src', 'hooks'),
-				'~api': resolve(__dirname, 'src', 'api'),
-				'~store': resolve(__dirname, 'src', 'store'),
-				'~images': resolve(__dirname, 'src', 'assets', 'images'),
-				'~styles': resolve(__dirname, 'src', 'assets', 'styles'),
-				'~fonts': resolve(__dirname, 'src', 'assets', 'fonts'),
-				'~utils': resolve(__dirname, 'src', 'utils'),
-				'~pages': resolve(__dirname, 'src', 'pages'),
-				'~constants': resolve(__dirname, 'src', 'constants'),
-				'~containers': resolve(__dirname, 'src', 'containers'),
-				'~types': resolve(__dirname, 'src', 'types'),
-				'~sections': resolve(__dirname, 'src', 'sections'),
+				'@': resolve(__dirname, 'src'),
 			},
 		},
 		envDir: resolve(__dirname, 'src', 'env'),

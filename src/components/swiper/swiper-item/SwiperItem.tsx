@@ -1,10 +1,20 @@
 import React from 'react';
 
-export interface SwiperItemProps {
+import type { ComponentProps } from '@/types';
+
+export interface SwiperItemProps extends ComponentProps {
 	children: React.ReactNode | React.ReactNode[];
+	className?: string;
+	[key: string]: any;
 }
 
-const SwiperItem: React.FC<SwiperItemProps> = ({ children }) => <>{children}</>;
+const SwiperItem: React.FC<SwiperItemProps> = ({ children, className = '', ...rest }) => {
+	return (
+		<div className={`mg-w-full mg-h-full ${className}`} {...rest}>
+			{children}
+		</div>
+	);
+};
 SwiperItem.displayName = 'SwiperItem';
 
 export default SwiperItem;

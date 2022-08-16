@@ -10,9 +10,15 @@ module.exports = {
 		storyStoreV7: true,
 	},
 	webpackFinal: async (config) => {
-		config.resolve.alias['~'] = path.resolve(__dirname, '../src');
-		config.resolve.alias['~components'] = path.resolve(__dirname, '../src/components');
-		console.info(config);
+		config.resolve.alias['@/'] = path.resolve(__dirname, '../src');
+		config.resolve.alias['@'] = path.resolve(__dirname, '../src');
+
+		config.module.rules.push({
+			test: /\.(png|gif|jpe?g|svg|bmp)$/i,
+			type: 'asset/resource',
+			generator: { filename: 'img/[hash:7].[ext][query]' },
+		});
+		console.log('configconfigconfig', config);
 		return config;
 	},
 };

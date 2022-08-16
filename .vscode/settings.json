@@ -16,24 +16,19 @@
 	"editor.autoClosingBrackets": "always",
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"eslint.options": {
-		"extensions": [".js", ".jsx", "ts", "tsx", ".md", ".mdx"]
+		"extensions": [".js", ".jsx", "ts", "tsx"]
 	},
 	"editor.rulers": [120],
+	"eslint.workingDirectories": [
+		{
+			"mode": "auto"
+		},
+		".eslintrc.js",
+		".eslintignore"
+	],
 	"eslint.packageManager": "pnpm",
 	"eslint.format.enable": true,
-	"eslint.validate": [
-		"javascript",
-		"typescript",
-		"javascriptreact",
-		"typescriptreact",
-		"vue",
-		"html",
-		"markdown",
-		"mdx",
-		"json",
-		"jsonc",
-		"json5"
-	],
+	"eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
 	"emmet.triggerExpansionOnTab": true,
 	"emmet.includeLanguages": {
 		"javascript": "javascriptreact",

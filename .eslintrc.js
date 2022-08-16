@@ -5,7 +5,8 @@ module.exports = {
 		'import/resolver': {
 			node: {
 				paths: ['src'],
-				extensions: ['.js', '.jsx', '.ts', '.tsx'],
+				extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+				moduleDirectory: ['node_modules', 'src'],
 			},
 		},
 	},
@@ -32,5 +33,16 @@ module.exports = {
 			},
 		],
 		'filenames/match-regex': 'off',
+		'no-unused-vars': [
+			'error',
+			{
+				vars: 'all',
+				args: 'after-used',
+				ignoreRestSiblings: true,
+				caughtErrors: 'none',
+			},
+		],
+		'import/extensions': 'off',
+		'import/no-unresolved': 'off',
 	},
 };
