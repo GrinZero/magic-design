@@ -9,7 +9,13 @@ interface VerticalSwiperProps extends SwiperProps {
 	autoplay: boolean;
 }
 
-const VerticalSwiper: React.FC<VerticalSwiperProps> = ({ defaultCurrent = 0, current, children, autoplay, duration }) => {
+const VerticalSwiper: React.FC<VerticalSwiperProps> = ({
+	defaultCurrent = 0,
+	current,
+	children,
+	autoplay,
+	duration,
+}) => {
 	const childrenList = useMemo(() => (Array.isArray(children) ? children : [children]), [children]);
 	const child = childrenList[current ?? defaultCurrent];
 
