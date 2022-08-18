@@ -1,3 +1,32 @@
+%preserve-3d {
+	transform-style: preserve-3d;
+}
+%transtion-all {
+	transition: all 0.36s linear;
+}
+
 .corner-swiper {
 	position: relative;
+	@extend %preserve-3d;
+}
+
+.swiper-item {
+	flex-shrink: 0;
+	perspective: 700px;
+	overflow: visible;
+	@extend %preserve-3d;
+}
+
+.element-3d {
+	clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+	transform: rotateX(0deg) rotateY(var(--rotate));
+	transform-origin: var(--position);
+	@extend %preserve-3d;
+	@extend %transtion-all;
+}
+
+.element-2d {
+	clip-path: polygon(var(--position) 0, 100% 0, 100% 100%, var(--position) 100%);
+	@extend %preserve-3d;
+	@extend %transtion-all;
 }
