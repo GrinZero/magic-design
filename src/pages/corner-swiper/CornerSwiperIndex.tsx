@@ -26,14 +26,14 @@ const imgList = [
 	},
 ];
 
-const CornerSwiperIndex = () => {
+const CornerSwiperIndex = ({ ...rest }) => {
 	const [current, setCurrent] = useState(0);
 	const handleClick = () => {
 		setCurrent(current + 1 >= imgList.length ? 0 : current + 1);
 	};
 	return (
-		<div className="mg-w-full mg-overflow-x-hidden mg-overflow-y-visible">
-			<CornerSwiper current={current}>
+		<div className="mg-w-full mg-h-full mg-overflow-visible">
+			<CornerSwiper current={current} {...rest}>
 				{imgList.map((item) => (
 					<SwiperItem key={item.alt} className={styles.item} onClick={() => setCurrent(0)}>
 						<img className={styles.img} alt={item.alt} src={item.src} />

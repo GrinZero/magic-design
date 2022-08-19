@@ -2,7 +2,8 @@
 	transform-style: preserve-3d;
 }
 %transtion-transform {
-	transition: transform 0.36s ease, clip-path 0.36s ease, transform-origin 0.36s ease;
+	transition: transform 0.36s ease, clip-path 0.36s ease,
+		transform-origin 0.36s ease, width 0.36s ease;
 }
 
 .swiper-container {
@@ -10,10 +11,9 @@
 }
 
 .corner-swiper {
-	@extend %preserve-3d;
-
 	flex-shrink: 0;
 	overflow: visible;
+	@extend %preserve-3d;
 }
 
 %transform-origin-position {
@@ -21,11 +21,15 @@
 }
 
 .element-3d {
-	clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+	// clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+
+	/* stylelint-disable-next-line value-no-vendor-prefix */
+	display: -webkit-box;
+	width: var(--position);
 	transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateX(1px);
+	transform-origin: right;
 	@extend %preserve-3d;
 	@extend %transtion-transform;
-	@extend %transform-origin-position;
 }
 
 .element-2d {

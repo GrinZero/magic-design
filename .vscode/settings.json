@@ -6,6 +6,7 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll": false,
 		"source.fixAll.eslint": true, // this allows ESLint to auto fix on save
+		"source.fixAll.stylelint": true,
 		"source.organizeImports": false
 	},
 	"files.eol": "\n",
@@ -14,7 +15,6 @@
 	"editor.formatOnSave": true,
 	"editor.formatOnPaste": false,
 	"editor.autoClosingBrackets": "always",
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"eslint.options": {
 		"extensions": [".js", ".jsx", "ts", "tsx"]
 	},
@@ -66,6 +66,9 @@
 	"[mdx]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
+	"[scss]": {
+		"editor.defaultFormatter": "stylelint.vscode-stylelint"
+	},
 	"auto-close-tag.activationOnLanguage": [
 		"xml",
 		"php",
@@ -109,5 +112,6 @@
 		"HTML (Eex)",
 		"plist",
 		"mdx"
-	]
+	],
+	"stylelint.validate": ["css", "less", "postcss", "scss", "sass"]
 }

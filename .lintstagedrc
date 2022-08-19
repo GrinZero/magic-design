@@ -4,7 +4,6 @@
 		"npx eslint --fix"
 	],
 	"*.{css,less,scss}": [
-		"npx prettier --write",
 		"npx stylelint --fix"
 	],
 	"*.{json,md,mdx}": [
