@@ -5,21 +5,33 @@ import styles from './CornerSwiper.module.scss';
 
 interface CornerSwiperProps extends SwiperProps {
 	defaultMargin?: boolean;
-	rotate?: string;
-	position?: number | string;
+	rotateX?: string;
+	rotateY?: string;
+	position?: number;
+	perspective?: string;
+	perspectiveOriginX?: string;
+	perspectiveOriginY?: string;
 }
 
+const oneItem = 270;
+
 const CornerSwiper: React.FC<CornerSwiperProps> = ({
-	defaultCurrent = 0,
 	defaultMargin = true,
 	children,
-	position = '20%',
-	rotate = '-45deg',
+	current,
 	className = '',
+	position = 0.2,
+	perspective = '1000px',
+	perspectiveOriginX = '50%',
+	perspectiveOriginY = '50%',
+	rotateX = '0deg',
+	rotateY = '-45deg',
+	defaultCurrent = 0,
 	// autoplay,
 	// duration,
 }) => {
-	const [currentIndex] = useState(defaultCurrent);
+	const [_currentIndex] = useState(defaultCurrent);
+	const currentIndex = current ?? _currentIndex;
 
 	const childrenList = useMemo(() => {
 		const childList = Array.isArray(children) ? children : [children];
@@ -35,33 +47,40 @@ const CornerSwiper: React.FC<CornerSwiperProps> = ({
 	}, [children, defaultMargin]);
 
 	const swiperElement = (
-		<div
-			className={`mg-w-full mg-h-full mg-flex-row  mg-overflow-hidden mg-flex mg-flex-nowrap ${className}`}
-		>
+		<div className={`mg-w-full mg-h-full mg-flex-row mg-flex mg-flex-nowrap ${className}`}>
 			{childrenList}
 		</div>
 	);
 
-	const translateDistance = -100;
+	const translatePercent = currentIndex / childrenList.length;
+
+	const positionStr = useMemo(() => {
+		console.log('translatePercent', position + translatePercent);
+		return `${(position + translatePercent) * 100}%`;
+	}, [position, translatePercent]);
+
 	const element3D = React.cloneElement(swiperElement, {
 		...swiperElement.props,
 		className: `mg-relative ${styles['element-3d']} ${swiperElement.props.className}`,
 		// eslint-disable-next-line @typescript-eslint/naming-convention
-		style: { '--position': position, '--rotate': rotate },
+		style: { '--position': positionStr, '--rotate-x': rotateX, '--rotate-y': rotateY },
 	});
 	const element2D = React.cloneElement(swiperElement, {
 		...swiperElement.props,
 		className: `mg-absolute mg-top-0 mg-left-0 ${styles['element-2d']} ${swiperElement.props.className}`,
 		// eslint-disable-next-line @typescript-eslint/naming-convention
-		style: { '--position': position },
+		style: { '--position': positionStr, '--rotate-x': rotateX },
 	});
 
 	return (
 		<div
 			className={`${styles['swiper-container']}`}
-			style={{ transform: `translatex(${translateDistance * currentIndex}px)` }}
+			style={{ transform: `translatex(${-translatePercent * oneItem * childrenList.length}px)` }}
 		>
-			<div className={`mg-w-full mg-h-full mg-relative ${styles['corner-swiper']}`}>
+			<div
+				className={`mg-w-full mg-h-full mg-relative ${styles['corner-swiper']}`}
+				style={{ perspective, perspectiveOrigin: `${perspectiveOriginX} ${perspectiveOriginY}` }}
+			>
 				{element3D}
 				{element2D}
 			</div>

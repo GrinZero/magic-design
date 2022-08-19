@@ -5,6 +5,7 @@ import type { ComponentProps } from '@/types';
 export interface SwiperItemProps extends ComponentProps {
 	children: React.ReactNode | React.ReactNode[];
 	className?: string;
+	[x: string]: any;
 }
 
 const SwiperItem: React.FC<SwiperItemProps> = ({ children, className = '', ...rest }) => {

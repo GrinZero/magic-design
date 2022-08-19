@@ -28,14 +28,22 @@ const imgList = [
 
 const CornerSwiperIndex = () => {
 	const [current, setCurrent] = useState(0);
+	const handleClick = () => {
+		setCurrent(current + 1 >= imgList.length ? 0 : current + 1);
+	};
 	return (
-		<CornerSwiper current={current}>
-			{imgList.map((item) => (
-				<SwiperItem key={item.alt} className={styles.item} onClick={() => setCurrent(0)}>
-					<img className={styles.img} alt={item.alt} src={item.src} />
-				</SwiperItem>
-			))}
-		</CornerSwiper>
+		<div className="mg-w-full mg-overflow-x-hidden mg-overflow-y-visible">
+			<CornerSwiper current={current}>
+				{imgList.map((item) => (
+					<SwiperItem key={item.alt} className={styles.item} onClick={() => setCurrent(0)}>
+						<img className={styles.img} alt={item.alt} src={item.src} />
+					</SwiperItem>
+				))}
+			</CornerSwiper>
+			<div className={styles.button} onClick={handleClick} onKeyDown={handleClick}>
+				Click to change current
+			</div>
+		</div>
 	);
 };
 export default CornerSwiperIndex;

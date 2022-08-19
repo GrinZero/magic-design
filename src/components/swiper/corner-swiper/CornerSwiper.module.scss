@@ -13,20 +13,25 @@
 	@extend %preserve-3d;
 
 	flex-shrink: 0;
-	perspective: 1800px;
 	overflow: visible;
+}
+
+%transform-origin-position {
+	transform-origin: var(--position) var(--position) 0;
 }
 
 .element-3d {
 	clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
-	transform: rotateX(0deg) rotateY(var(--rotate)) translateX(1px);
-	transform-origin: var(--position);
+	transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y)) translateX(1px);
 	@extend %preserve-3d;
 	@extend %transtion-transform;
+	@extend %transform-origin-position;
 }
 
 .element-2d {
 	clip-path: polygon(var(--position) 0, 100% 0, 100% 100%, var(--position) 100%);
+	transform: rotateX(var(--rotate-x));
 	@extend %preserve-3d;
 	@extend %transtion-transform;
+	@extend %transform-origin-position;
 }
