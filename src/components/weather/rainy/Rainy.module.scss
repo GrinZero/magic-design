@@ -1,4 +1,4 @@
-@keyframes flash {
+@keyframes rainy-flash {
 	48% {
 		background-color: rgb(96 125 139 / 100%);
 	}
@@ -81,5 +81,5 @@
 	background-color: #597180;
 	border-radius: 10px;
 	box-shadow: 1px 1px 30px #4d636f;
-	animation: flash 1.5s infinite linear;
+	animation: rainy-flash 1.5s infinite linear;
 }

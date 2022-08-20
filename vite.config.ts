@@ -93,6 +93,7 @@ export default defineConfig((mode) => {
 		resolve: {
 			alias: {
 				'@': resolve(__dirname, 'src'),
+				'@react': resolve(__dirname, './node_modules/react/umd/react.production.min.js'),
 			},
 		},
 		envDir: resolve(__dirname, 'src', 'env'),

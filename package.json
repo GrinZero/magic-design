@@ -52,6 +52,8 @@
 	},
 	"homepage": "https://github.com/GrinZero/magic-design#readme",
 	"dependencies": {
+		"ahooks": "^3.7.0",
+		"animate.css": "^4.1.1",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0",
 		"react-error-boundary": "^3.1.4",
@@ -112,6 +114,7 @@
 		"stylelint-config-standard": "^25.0.0",
 		"stylelint-config-standard-scss": "^3.0.0",
 		"tailwindcss": "^3.1.8",
+		"tdesign-react": "^0.40.3",
 		"typescript": "^4.6.4",
 		"vite": "^2.9.9",
 		"vite-plugin-chunk-split": "^0.2.2",

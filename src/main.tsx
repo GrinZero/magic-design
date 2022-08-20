@@ -1,4 +1,5 @@
 import 'tailwindcss/tailwind.css';
+import 'animate.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';

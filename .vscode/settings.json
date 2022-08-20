@@ -16,7 +16,7 @@
 	"editor.formatOnPaste": false,
 	"editor.autoClosingBrackets": "always",
 	"eslint.options": {
-		"extensions": [".js", ".jsx", "ts", "tsx"]
+		"extensions": [".js", ".jsx", ".ts", ".tsx", ".mdx"]
 	},
 	"editor.rulers": [120],
 	"eslint.workingDirectories": [
@@ -64,7 +64,7 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[mdx]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "vscode.emmet"
 	},
 	"[scss]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
