@@ -1,0 +1,28 @@
+import { Meta ,Canvas, Story,ArgsTable} from '@storybook/addon-docs';
+
+import {Weather} from "@/components"
+
+<Meta
+	title="Weather"
+	argTypes={{
+		type:{
+			name:"type",
+			description:"choose type of weather",
+			control:{
+				type:"select",
+				options:["sunny","cloudy","rainy","snowy","nighty"]
+			}
+		}
+	 }}
+	component={Weather}
+ />
+
+export const Template = (args) => <Weather {...args} />;
+
+## Weather
+
+### 1 Sun
+use `type="sunny"` to show sun
+<Story name="Sunny" args={{type:"sunny"}}>
+	{Template.bind({})}
+</Story>

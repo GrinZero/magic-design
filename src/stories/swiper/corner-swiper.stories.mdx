@@ -1,7 +1,5 @@
 import { Meta ,Canvas, Story} from '@storybook/addon-docs';
 
-<!-- // import CornerSwiperIndex from "../../pages/corner-swiper/index.tsx" -->
-
 import CornerSwiperIndex from "../../pages/corner-swiper/CornerSwiperIndex"
 
 <Meta title="Swiper/CornerSwiper" />
@@ -9,6 +7,18 @@ import CornerSwiperIndex from "../../pages/corner-swiper/CornerSwiperIndex"
 export const Template = (args) => <CornerSwiperIndex {...args} />;
 
 ## Swiper/CornerSwiper
+
+### 1 基本用法
+
+CornerSwiper的实现原理是叠加切片，CSS目前实现曲面难度较大，可用功能请查看以下的列表
+- [x] 左侧的拐角
+- [ ] 右侧的拐角
+- [ ] 拐角曲面
+
+
+### 2 代码演示
+
+我们可以通过`perspectiveOriginY`、`rotateY`和`perspective`三个属性来调控拐角的角度和位置，可在Canvas中尝试。
 
 <Story
   name="Base"
@@ -25,3 +35,6 @@ export const Template = (args) => <CornerSwiperIndex {...args} />;
   {Template.bind({})}
 </Story>
 
+### 3 TIPS&BUGS
+
+- TIPS：使用overflow:hidden如果失效的话，建议通过元素遮挡的方式来解决

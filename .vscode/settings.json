@@ -67,7 +67,7 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[scss]": {
-		"editor.defaultFormatter": "stylelint.vscode-stylelint"
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"auto-close-tag.activationOnLanguage": [
 		"xml",

@@ -44,5 +44,6 @@ module.exports = {
 		],
 		'import/extensions': 'off',
 		'import/no-unresolved': 'off',
+		'security/detect-object-injection': 'off',
 	},
 };
