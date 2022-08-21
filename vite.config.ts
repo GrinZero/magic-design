@@ -7,6 +7,7 @@ import svgr from 'vite-plugin-svgr';
 
 import { resolve } from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
+import dts from 'vite-plugin-dts';
 
 import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
@@ -62,11 +63,46 @@ export default defineConfig((mode) => {
 					'react-vendor': ['react', 'react-dom', 'react-router-dom'],
 				},
 			}),
+			dts({
+				tsConfigFilePath: './tsconfig.json',
+			}),
 		],
 		build: {
 			target: 'es2018',
+			outDir: 'dist',
+			cssCodeSplit: true,
 			rollupOptions: {
-				plugins: !!shouldAnalyze ? [visualizer({ filename: './dist/_stats.html' })] : [],
+				external: ['react', 'react-dom'],
+				output: [
+					{
+						format: 'umd',
+						entryFileNames: '[name].js',
+						dir: 'dist/umd',
+						globals: {
+							react: 'React',
+						},
+					},
+					{
+						format: 'es',
+						entryFileNames: '[name].js',
+						preserveModules: true,
+						dir: 'dist/es',
+						preserveModulesRoot: 'src/components',
+					},
+					{
+						format: 'cjs',
+						entryFileNames: '[name].js',
+						preserveModules: true,
+						dir: 'dist/lib',
+						preserveModulesRoot: 'src/components',
+					},
+				],
+			},
+			lib: {
+				entry: resolve(__dirname, 'src/components/index.tsx'),
+				name: 'magicDesign',
+				filename: 'magic-design',
+				formats: ['es', 'umd', 'cjs'],
 			},
 			sourcemap: !!shouldAnalyze,
 		},
