@@ -3,15 +3,6 @@
 	"version": "0.0.7",
 	"description": "A component library that can achieve magic effects",
 	"author": "774933704@qq.com",
-	"main": "./src/main.tsx",
-	"types": "./dist/src/components/index.d.ts",
-	"exports": {
-		".": {
-			"import": "./dist/es/index.js",
-			"require": "./dist/lib/index.js",
-			"default": "./dist/magic-design-react.es.js"
-		}
-	},
 	"engines": {
 		"node": ">=16",
 		"npm": ">=8",
@@ -36,6 +27,7 @@
 		"typescript"
 	],
 	"packageManager": "pnpm@7.9.0",
+	"main": "./src/main.tsx",
 	"scripts": {
 		"publish": "npm run build:npm && npm publish --access public",
 		"build:npm": "pnpm run reset:vite && tsc && vite build",
