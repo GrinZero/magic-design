@@ -6,17 +6,18 @@ import mkcert from 'vite-plugin-mkcert';
 import svgr from 'vite-plugin-svgr';
 
 import { resolve } from 'path';
-import { visualizer } from 'rollup-plugin-visualizer';
 import dts from 'vite-plugin-dts';
 
-import legacy from '@vitejs/plugin-legacy';
+// import { visualizer } from 'rollup-plugin-visualizer';
+// import typescript from '@rollup/plugin-typescript';
+// import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
 
 const shouldAnalyze = process.env.ANALYZE ?? false;
 const isHttps = process.env.HTTPS ?? false;
 
 // https://vitejs.dev/config/
-export default defineConfig((mode) => {
+export default defineConfig((ctx) => {
 	return {
 		plugins: [
 			react({
@@ -36,7 +37,7 @@ export default defineConfig((mode) => {
 			}),
 
 			viteImagemin({
-				disable: mode === 'development',
+				disable: ctx.mode === 'development',
 				mozjpeg: {
 					progressive: true,
 					quality: 80,
@@ -72,7 +73,6 @@ export default defineConfig((mode) => {
 			outDir: 'dist',
 			cssCodeSplit: true,
 			rollupOptions: {
-				external: ['react', 'react-dom'],
 				output: [
 					{
 						format: 'umd',
@@ -88,6 +88,7 @@ export default defineConfig((mode) => {
 						preserveModules: true,
 						dir: 'dist/es',
 						preserveModulesRoot: 'src/components',
+						plugins: [],
 					},
 					{
 						format: 'cjs',
@@ -102,7 +103,6 @@ export default defineConfig((mode) => {
 				entry: resolve(__dirname, 'src/components/index.tsx'),
 				name: 'magicDesign',
 				filename: 'magic-design',
-				formats: ['es', 'umd', 'cjs'],
 			},
 			sourcemap: !!shouldAnalyze,
 		},

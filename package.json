@@ -1,8 +1,17 @@
 {
 	"name": "@source-bug/magic-design-react",
-	"version": "1.0.5",
+	"version": "0.0.7",
 	"description": "A component library that can achieve magic effects",
 	"author": "774933704@qq.com",
+	"main": "./src/main.tsx",
+	"types": "./dist/src/components/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/es/index.js",
+			"require": "./dist/lib/index.js",
+			"default": "./dist/magic-design-react.es.js"
+		}
+	},
 	"engines": {
 		"node": ">=16",
 		"npm": ">=8",
@@ -24,15 +33,9 @@
 		"swiper",
 		"vite",
 		"react",
-		"react vite",
-		"typescript",
-		"typescript vite",
-		"typescript vite react",
-		"typescript react",
-		"typescript react vite"
+		"typescript"
 	],
 	"packageManager": "pnpm@7.9.0",
-	"main": "./src/main.tsx",
 	"scripts": {
 		"publish": "npm run build:npm && npm publish --access public",
 		"build:npm": "pnpm run reset:vite && tsc && vite build",
@@ -71,6 +74,7 @@
 		"@commitlint/cli": "^16.2.4",
 		"@commitlint/config-conventional": "^16.2.4",
 		"@fullstacksjs/eslint-config": "^8.4.3",
+		"@rollup/plugin-typescript": "^8.3.4",
 		"@storybook/addon-actions": "^6.5.0-beta.8",
 		"@storybook/addon-backgrounds": "^6.5.10",
 		"@storybook/addon-docs": "^6.5.10",
