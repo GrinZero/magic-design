@@ -1,14 +1,15 @@
-import { usePrevious, useSetState } from 'ahooks';
 import React, { useEffect } from 'react';
+
+import { usePrevious, useSetState } from 'ahooks';
 
 import type { ComponentProps } from '@/types';
 
+import styles from './Weather.module.scss';
 import Cloudy from './cloudy/Cloudy';
 import Nighty from './nighty/Nighty';
 import Rainy from './rainy/Rainy';
 import Snowy from './snowy/Snowy';
 import Sunny from './sunny/Sunny';
-import styles from './Weather.module.scss';
 
 enum WeatherType {
 	sunny = 'sunny',

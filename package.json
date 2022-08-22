@@ -1,6 +1,6 @@
 {
 	"name": "@source-bug/magic-design-react",
-	"version": "0.0.7",
+	"version": "0.0.11",
 	"description": "A component library that can achieve magic effects",
 	"author": "774933704@qq.com",
 	"engines": {
@@ -27,13 +27,28 @@
 		"typescript"
 	],
 	"packageManager": "pnpm@7.9.0",
-	"main": "./src/main.tsx",
+	"entryPoint": "dist/lib/index.js",
+	"types": "dist/src/components/index.d.ts",
+	"main": "dist/lib/index.js",
+	"module": "dist/es/index.js",
+	"umd": "dist/umd/index.js",
+	"exports": {
+		".": {
+			"import": "./dist/es/index.js",
+			"require": "./dist/lib/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"package.json"
+	],
 	"scripts": {
-		"publish": "npm run build:npm && npm publish --access public",
-		"build:npm": "pnpm run reset:vite && tsc && vite build",
+		"setup": "npm install --ignore-scripts",
+		"publish": "npm run build && npm publish --access public",
+		"build": "pnpm run reset:vite && tsc && vite build",
 		"dev": "pnpm run reset:vite && cross-env DEBUG=vite:plugin:mkcert HTTPS=true vite",
 		"dev:http": "pnpm run reset:vite && vite",
-		"build": "pnpm run reset:vite && tsc && vite build",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"preview": "pnpm run build && vite preview",

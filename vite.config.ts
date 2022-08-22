@@ -1,12 +1,12 @@
 // @ts-nocheck
 import { defineConfig } from 'vite';
 import { chunkSplitPlugin } from 'vite-plugin-chunk-split';
+import dts from 'vite-plugin-dts';
 import viteImagemin from 'vite-plugin-imagemin';
 import mkcert from 'vite-plugin-mkcert';
 import svgr from 'vite-plugin-svgr';
 
 import { resolve } from 'path';
-import dts from 'vite-plugin-dts';
 
 // import { visualizer } from 'rollup-plugin-visualizer';
 // import typescript from '@rollup/plugin-typescript';
@@ -19,6 +19,9 @@ const isHttps = process.env.HTTPS ?? false;
 // https://vitejs.dev/config/
 export default defineConfig((ctx) => {
 	return {
+		entry: {
+			components: resolve(__dirname, 'src/components/index.tsx'),
+		},
 		plugins: [
 			react({
 				// Removes React Devtools in production build
@@ -73,13 +76,17 @@ export default defineConfig((ctx) => {
 			outDir: 'dist',
 			cssCodeSplit: true,
 			rollupOptions: {
+				external: ['react', 'react-dom', 'react-router-dom', 'ahooks'],
 				output: [
 					{
 						format: 'umd',
 						entryFileNames: '[name].js',
 						dir: 'dist/umd',
 						globals: {
-							react: 'React',
+							'react': 'React',
+							'ahooks': 'ahooks',
+							'react-dom': 'ReactDOM',
+							'react-router-dom': 'ReactRouterDOM',
 						},
 					},
 					{
@@ -88,7 +95,6 @@ export default defineConfig((ctx) => {
 						preserveModules: true,
 						dir: 'dist/es',
 						preserveModulesRoot: 'src/components',
-						plugins: [],
 					},
 					{
 						format: 'cjs',
@@ -103,6 +109,7 @@ export default defineConfig((ctx) => {
 				entry: resolve(__dirname, 'src/components/index.tsx'),
 				name: 'magicDesign',
 				filename: 'magic-design',
+				formats: ['umd', 'es', 'esm', 'cjs'],
 			},
 			sourcemap: !!shouldAnalyze,
 		},
@@ -129,7 +136,6 @@ export default defineConfig((ctx) => {
 		resolve: {
 			alias: {
 				'@': resolve(__dirname, 'src'),
-				'@react': resolve(__dirname, './node_modules/react/umd/react.production.min.js'),
 			},
 		},
 		envDir: resolve(__dirname, 'src', 'env'),
